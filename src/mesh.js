@@ -17,7 +17,7 @@ module.exports = (regl, data, useReflexion) => {
     loadTexture(floorTexture, "res/floor.jpg");
     return regl({
         frag: `
-        precision lowp float;
+        precision highp float;
         varying vec3 v_pos, v_relativepos, v_normal;
         uniform sampler2D wallTexture;
         uniform sampler2D floorTexture;

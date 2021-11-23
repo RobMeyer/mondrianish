@@ -7,7 +7,7 @@ module.exports = (regl) => {
 	const painting =
 		regl({
 			frag: `
-	precision lowp float;
+	precision highp float;
 	uniform sampler2D tex;
 	varying vec3 uv;
 

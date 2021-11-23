@@ -1,16 +1,14 @@
 'strict mode';
 
-const textHeight = 32;
+const textHeight = 42;
 const textCanvas = document.createElement('canvas');
-//document.body.appendChild(textCanvas);
-//textCanvas.style.position = "fixed";
 const maxWidth = textCanvas.width = textCanvas.height = 1024;
 const ctx = textCanvas.getContext('2d');
 ctx.mozImageSmoothingEnabled = false;
 ctx.webkitImageSmoothingEnabled = false;
 ctx.font = textHeight + "px Verdana";
 ctx.textBaseline = "bottom";
-ctx.fillStyle = "#aaa";
+ctx.fillStyle = "#ddd";
 
 // from https://delphic.me.uk/tutorials/webgl-text
 function createMultilineText(ctx, textToWrite, maxWidth, text) {
