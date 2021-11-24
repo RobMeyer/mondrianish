@@ -105,9 +105,13 @@ module.exports = function ({getGridSegments, getGridParts}, fovY) {
 			//document.querySelector("canvas").requestFullscreen();
 		}
 		if(e.type === "touchstart"){
+			e.preventDefault();
+
 			firstTouch = lastTouch = e.touches[0];
 			touchTimestamp = e.timeStamp;
 		} else if(e.type === "touchend") {
+			e.preventDefault();
+
 			const d = Math.hypot(
 				firstTouch.pageX - lastTouch.pageX,
 				firstTouch.pageY - lastTouch.pageY
@@ -190,6 +194,8 @@ module.exports = function ({getGridSegments, getGridParts}, fovY) {
 			}
 			firstTouch = lastTouch = false;
 		} else if(e.type === "touchmove" && lastTouch) {
+			e.preventDefault();
+
 			orientCamera(e.touches[0].pageX - lastTouch.pageX, 
 						 e.touches[0].pageY - lastTouch.pageY,
 						 touchSensibility);
@@ -197,9 +203,9 @@ module.exports = function ({getGridSegments, getGridParts}, fovY) {
 		}
 		//console.log(e);
 	}
-	window.addEventListener('touchstart', handleTouch);
-	window.addEventListener('touchmove', handleTouch);
-	window.addEventListener('touchend', handleTouch);
+	window.addEventListener('touchstart', handleTouch, {passive: false});
+	window.addEventListener('touchmove', handleTouch, {passive: false});
+	window.addEventListener('touchend', handleTouch, {passive: false});
 
 	// Keyboard input
 	var keys = {};
