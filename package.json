@@ -27,7 +27,7 @@
 		"browserify": "^16.5.2",
 		"budo": "^11.6.4",
 		"copyfiles": "^2.4.1",
-		"inline-htmlify": "^2.0.1",
+		"inline-htmlify": "^1.0.2",
 		"mkdirp": "^1.0.4",
 		"tinyify": "^3.0.0",
 		"uglify-js": "^3.14.1"
